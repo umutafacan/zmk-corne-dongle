@@ -70,29 +70,6 @@
         };
     };
 
-    macros {
-        ss_sel: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp LEFT_GUI &kp NUMBER_3>;
-            label = "NEW_MACRO";
-        };
-
-        ss_full: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp LG(NUMBER_4)>;
-            label = "NEW_MACRO";
-        };
-
-        option_backspace: option_backspace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(BACKSPACE)>;
-            label = "OPTION_BACKSPACE";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -111,7 +88,7 @@
         lower_layer {
             display-name = "NUMBER";
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                   &mmv MOVE_UP                     &kp N6           &kp N7      &kp N8          &kp N9     &kp N0    &option_backspace
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                   &mmv MOVE_UP                     &kp N6           &kp N7      &kp N8          &kp N9     &kp N0    &kp LA(BACKSPACE)
 &trans  &trans  &trans  &trans  &trans  &trans                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp C_VOLUME_UP  &kp C_MUTE  &kp UP          &kp C_PP   &kp HOME  &kp PG_UP
 &trans  &trans  &trans  &trans  &trans  &mkp RCLK  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp C_VOL_DN     &kp LEFT    &kp DOWN_ARROW  &kp RIGHT  &kp END   &kp PG_DN
                         &trans  &trans  &trans                                                                    &kp INS          &trans      &trans
@@ -123,7 +100,7 @@
         raise_layer {
             display-name = "SYMBOL";
             bindings = <
-&trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
+&trans  &kp EXCL  &kp AT     &kp HASH   &kp DLLR   &kp PRCNT                            &mmv MOVE_UP                     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp DELETE
 &trans  &trans    &mkp LCLK  &mkp MCLK  &mkp RCLK  &mkp MB4             &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
 &trans  &trans    &trans     &none      &none      &mkp MB5   &trans                    &mmv MOVE_DOWN                   &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                              &trans     &trans     &kp SPACE                                                             &kp RET    &trans     &trans
@@ -135,9 +112,9 @@
         layer_3 {
             display-name = "Fn";
             bindings = <
-&studio_unlock  &kp F1        &kp F2        &kp F3           &kp F4      &kp F5                                      &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10   &kp F11
-&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_CLR  &out OUT_BLE                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &ss_sel   &kp F12
-&trans          &sys_reset    &trans        &rgb_ug RGB_TOG  &bl BL_TOG  &out OUT_USB  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &ss_full  &kp PAUSE_BREAK
+&studio_unlock  &kp F1        &kp F2        &kp F3           &kp F4      &kp F5                                      &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10               &kp F11
+&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2     &bt BT_CLR  &out OUT_BLE                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp LS(LG(NUMBER_3))  &kp F12
+&trans          &sys_reset    &trans        &rgb_ug RGB_TOG  &bl BL_TOG  &out OUT_USB  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp LS(LG(NUMBER_4))  &kp PAUSE_BREAK
                                             &trans           &trans      &trans                                                                       &trans       &trans     &trans
             >;
 
