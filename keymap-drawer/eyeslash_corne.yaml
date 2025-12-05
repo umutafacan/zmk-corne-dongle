@@ -115,9 +115,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-left-click-outline$$
-  - $$mdi:mouse-scroll-wheel$$
+  - $$mdi:skip-previous$$
+  - $$mdi:skip-next$$
   - $$mdi:mouse-right-click-outline$$
-  - '&mkp MB4'
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
@@ -248,7 +248,9 @@ layers:
 combos:
 - p: [43, 46]
   k: Fn
-- p: [26, 27]
+- p: [26, 25]
   k: $$mdi:apple-keyboard-shift$$
 - p: [30, 31]
+  k: $$mdi:apple-keyboard-option$$
+- p: [15, 16]
   k: $$mdi:apple-keyboard-option$$
